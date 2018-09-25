@@ -1,4 +1,5 @@
-from cgi import escape
+try: from html import escape
+except ImportError: from cgi import escape
 
 def html_repr (object):
     so = escape (repr (object))
