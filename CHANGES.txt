@@ -20,17 +20,16 @@
   that file.  Thanks to Alex Eftimie and Zoltan Toth-Czifra for the patches.
 
 - The default value for the config file setting ``exitcodes=``, the expected
-  successful exit codes of a program, has changed.  In previous versions, it
-  was ``0,2``.  This caused issues with Golang programs where ``panic()``
-  causes the exit code to be ``2``.  The default value for ``exitcodes``
-  is now ``0``.
+  exit codes of a program, has changed.  In previous versions, it was ``0,2``.
+  This caused issues with Golang programs where ``panic()`` causes the exit
+  code to be ``2``.  The default value for ``exitcodes`` is now ``0``.
 
 - An undocumented feature where multiple ``supervisorctl`` commands could be
   combined on a single line separated by semicolons has been removed.
 
-- ``supervisorctl`` will now set its exit status to a non-zero value when an
-  error condition occurs.  Previous versions did not set the exit status so
-  it was always zero.  Patch by Luke Weber.
+- ``supervisorctl`` will now set its exit code to a non-zero value when an
+  error condition occurs.  Previous versions did not set the exit code for
+  most error conditions so it was almost always 0.  Patch by Luke Weber.
 
 - Added new ``stdout_syslog`` and ``stderr_syslog`` options to the config
   file.  These are boolean options that indicate whether process output will
