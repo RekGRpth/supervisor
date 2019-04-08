@@ -1282,6 +1282,11 @@ the web server and the process manager to each do what they do best.
    number ``0`` (zero).  When the last child in the group exits,
    Supervisor will close the socket.
 
+.. note::
+
+   Prior to Supervisor 3.4.0, FastCGI programs (``[fcgi-program:x]``)
+   could not be referenced in groups (``[group:x]``).
+
 All the options available to ``[program:x]`` sections are
 also respected by ``fcgi-program`` sections.
 
@@ -1305,6 +1310,16 @@ sections do not have.
   *Required*:  Yes.
 
   *Introduced*: 3.0
+
+``socket_backlog``
+
+  Sets socket listen(2) backlog.
+
+  *Default*: socket.SOMAXCONN
+
+  *Required*:  No.
+
+  *Introduced*: 3.4.0
 
 ``socket_owner``
 

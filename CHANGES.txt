@@ -1,12 +1,17 @@
-4.0.0.dev0 (Next 4.x Release)
------------------------------
+4.0.1.dev0 (Next Release)
+-------------------------
+
+
+
+4.0.0 (2019-04-05)
+------------------
 
 - Support for Python 3 has been added.  On Python 3, Supervisor requires
   Python 3.4 or later.  Many thanks to Vinay Sajip, Scott Maxwell, Palm Kevin,
-  Tres Seaver, Marc Abramowitz, Son Nguyen, Shane Hathaway, and Evan Andrews
-  who all made major contributions to the Python 3 porting effort.  Thanks
-  also to all contributors who submitted issue reports and patches towards
-  this effort.
+  Tres Seaver, Marc Abramowitz, Son Nguyen, Shane Hathaway, Evan Andrews,
+  and Ethan Hann who all made major contributions to the Python 3 porting
+  effort.  Thanks also to all contributors who submitted issue reports and
+  patches towards this effort.
 
 - Support for Python 2.4, 2.5, and 2.6 has been dropped.  On Python 2,
   Supervisor now requires Python 2.7.
@@ -36,6 +41,15 @@
   be sent to syslog.  Supervisor can now log to both files and syslog at the
   same time.  Specifying a log filename of ``syslog`` is still supported
   but deprecated.  Patch by Jason R. Coombs.
+
+3.4.0 (2019-04-05)
+------------------
+
+- FastCGI programs (``[fcgi-program:x]`` sections) can now be used in
+  groups (``[group:x]``).  Patch by Florian Apolloner.
+
+- Added a new ``socket_backlog`` option to the ``[fcgi-program:x]`` section
+  to set the listen(2) socket backlog.  Patch by Nenad Merdanovic.
 
 - Fixed a bug where ``SupervisorTransport`` (the XML-RPC transport used with
   Unix domain sockets) did not close the connection when ``close()`` was
